@@ -1,0 +1,16 @@
+.header {
+    display: flex;
+    margin-bottom: 2rem;
+    justify-content: space-around;
+}
+
+.header h1 {
+    margin-left: -6rem;
+}
+
+.header input {
+    width: 30rem;
+    height: 2rem;
+    margin-top: 1.4rem;
+    margin-left: -12rem;
+}
