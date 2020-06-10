@@ -12,6 +12,12 @@
     display: flex;
 }
 
+.overview-rating button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
 .review-count {
     margin-top: -0.03rem;
     margin-left: 1rem;

@@ -1,8 +1,35 @@
-import React from "react";
+import React, {useState} from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import {StarTwoTone} from "@ant-design/icons";
 import "../assets/styles/DetailPageOverview.scss"
+
+let ratings = ""
+
+let rating1 = () => {
+    ratings = "1"
+    console.log("rating =",ratings)
+}
+
+let rating2 = () => {
+    ratings = "2"
+    console.log("rating = ",ratings)
+}
+
+let rating3 = () => {
+    ratings = "3"
+    console.log("rating = ",ratings)
+}
+
+let rating4 = () => {
+    ratings = "4"
+    console.log("rating = ",ratings)
+}
+
+let rating5 = () => {
+    ratings = "5"
+    console.log("rating = ", ratings)
+}
 
 const DetailPageOverview = () => {
     return(
@@ -11,11 +38,11 @@ const DetailPageOverview = () => {
             <div className="overview-header">
                 <h1>Jojo no Kimyou na Bouken</h1>
                 <div className="overview-rating">
-                    <StarTwoTone twoToneColor="#FFFF00" />
-                    <StarTwoTone twoToneColor="#FFFF00" />
-                    <StarTwoTone twoToneColor="#FFFF00" />
-                    <StarTwoTone twoToneColor="#FFFF00" />
-                    <StarTwoTone twoToneColor="#FFFF00" />
+                    <button onClick={rating1}><StarTwoTone twoToneColor="#FFFF00" /></button>
+                    <button onClick={rating2}><StarTwoTone twoToneColor="#FFFF00" /></button>
+                    <button onClick={rating3}><StarTwoTone twoToneColor="#FFFF00" /></button>
+                    <button onClick={rating4}><StarTwoTone twoToneColor="#FFFF00" /></button>
+                    <button onClick={rating5}><StarTwoTone twoToneColor="#FFFF00" /></button>
                     <p className="review-count">999 reviews</p>
                 </div>
                 <div className="review-synopsis">

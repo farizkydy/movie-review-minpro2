@@ -1,5 +1,5 @@
-import React, {useState} from "react"
-import{useDispatch} from "react-redux"
+import React, {useState, useEffect} from "react"
+import{useDispatch, useSelector} from "react-redux"
 import {login} from "../store/actions/auth"
 
 const LoginForm = () => {
@@ -7,6 +7,8 @@ const LoginForm = () => {
     const [password, setPassword] = useState("")
 
     const dispatch = useDispatch()
+
+    const isAuthenticate = useSelector(state =>state.auth.isAuthenticate)
 
     const submit = e => {
         e.preventDefault()
