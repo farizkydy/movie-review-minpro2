@@ -1,6 +1,8 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import{useSelector} from "react-redux"
+import { useHistory } from "react-router-dom"
 import {StarTwoTone} from "@ant-design/icons";
 import "../assets/styles/DetailPageOverview.scss"
 
@@ -32,6 +34,15 @@ let rating5 = () => {
 }
 
 const DetailPageOverview = () => {
+    const history = useHistory()
+    const isAuthenticated = useSelector(state => state.auth.isAuthenticated)
+    
+    useEffect(() => {
+        if(isAuthenticated === false) {
+        history.push("/login")
+        }
+    }, [])
+    const movie = useSelector(state => state.homepage.name)
     return(
         <React.Fragment>
             <Header/>
@@ -71,6 +82,7 @@ const DetailPageOverview = () => {
                 <p><span className="content-spans">Studio</span>: David Productions</p>
                 <p><span className="content-spans">Keyword</span>: Jojo, Jojo's Bizzare Adventure, Joestar</p>
             </div>
+            <h1>{movie}</h1>
             <Footer/>
         </React.Fragment>
     )

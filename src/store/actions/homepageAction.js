@@ -1,7 +1,7 @@
 import {LOGIN_SUCCESS} from "./types";
 import axios from "axios"
 
-export const login = data => async dispatch => {
+export const homepageAction = data => async dispatch => {
     try {
         const res = await axios.post("https://ga-todoapps.herokuapp.com/api/v1/user/login", data)
         console.log("login", res)
@@ -14,4 +14,11 @@ export const login = data => async dispatch => {
 
     }
 
+}
+export const movieAction = movie => {
+    return{
+        type:"MOVIE",
+        payload: movie
+
+    }
 }

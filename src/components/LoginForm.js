@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react"
 import{useDispatch, useSelector} from "react-redux"
 import {login} from "../store/actions/auth"
+import { useHistory } from "react-router-dom"
 
 const LoginForm = () => {
     const [email, setEmail] = useState("")
@@ -9,19 +10,20 @@ const LoginForm = () => {
     const dispatch = useDispatch()
 
     const isAuthenticate = useSelector(state =>state.auth.isAuthenticate)
-
-    const submit = e => {
+    const history = useHistory()
+    const submit = async e => {
         e.preventDefault()
         const userData = {
             email,
             password
         }
         console.log("data", userData)
-        dispatch(login(userData))
+        await dispatch(login(userData))
+        history.push("/")
     }
     return(
         <div>
-            <form onSubmit={submit}>
+            <form>
                 <input
                     type="name"
                     value={email}
@@ -36,7 +38,7 @@ const LoginForm = () => {
                     placeholder="password"
                     onChange={(e)=> setPassword(e.target.value)}
                 />
-                <button>Login</button>
+                <button onClick={submit}>Login</button>
             </form>
         </div>
     )

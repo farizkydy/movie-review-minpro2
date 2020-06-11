@@ -1,9 +1,21 @@
-import React from "react"
+import React, {useEffect} from "react"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
+import{useSelector} from "react-redux"
 import "../assets/styles/Homepage.scss"
+import { useHistory } from "react-router-dom"
 
 const Homepage = () => {
+    const history = useHistory()
+    const isAuthenticated = useSelector(state => state.auth.isAuthenticated)
+    
+    useEffect(() => {
+        if(isAuthenticated === false) {
+        history.push("/login")
+        }
+    
+    }, [])
+
     return(
         <React.Fragment>
             <Header/>
