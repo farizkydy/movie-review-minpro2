@@ -1,27 +1,14 @@
-import {LOGIN_SUCCESS} from "../actions/types"
+import { GET_MOVIE, GET_GENRE } from "../actions/types";
 
-const initialState = {
-    token: localStorage.getItem("token"),
-    isAuthenticated: false,
-    errors: null
-}
-
-const auth = (state = initialState, action) => {
-    switch(action.type) {
+const movieReducer = (state = false, action) => {
+  switch (action.type) {
+    case GET_MOVIE:
+      return { ...state, ...action.payload };
+    case GET_GENRE:
+      return { ...state, genres: action.payload };
     default:
-        return {
-            ...state
-        }
-        case "get_movies": {
-            return{
-                ...state,
-                isAuthenticated:true,
-                token: action.data,
-                name:action.data2,
-                password: action.data1
-            }
-        }
-    }
-}
+      return state;
+  }
+};
 
-export default auth
+export default movieReducer;

@@ -34,15 +34,14 @@ let rating5 = () => {
 }
 
 const DetailPageOverview = () => {
-    const history = useHistory()
-    const isAuthenticated = useSelector(state => state.auth.isAuthenticated)
+    // const history = useHistory()
+    // const isAuthenticated = useSelector(state => state.auth.isAuthenticated)
     
-    useEffect(() => {
-        if(isAuthenticated === false) {
-        history.push("/login")
-        }
-    }, [])
-    const movie = useSelector(state => state.homepage.name)
+    // useEffect(() => {
+    //     if(isAuthenticated === false) {
+    //     history.push("/login")
+    //     }
+    // }, [])
     return(
         <React.Fragment>
             <Header/>
@@ -82,7 +81,6 @@ const DetailPageOverview = () => {
                 <p><span className="content-spans">Studio</span>: David Productions</p>
                 <p><span className="content-spans">Keyword</span>: Jojo, Jojo's Bizzare Adventure, Joestar</p>
             </div>
-            <h1>{movie}</h1>
             <Footer/>
         </React.Fragment>
     )

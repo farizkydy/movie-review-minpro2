@@ -1,3 +1,7 @@
+* h1 {
+    font-weight: bolder;
+}
+
 .overview-header {
     background-image: url("../images/extra2.jpg");
     background-repeat: no-repeat;
@@ -10,6 +14,11 @@
 
 .overview-rating {
     display: flex;
+    color: black;
+}
+
+.overview-rating p {
+    padding-top: 1rem;
 }
 
 .overview-rating button {
@@ -42,7 +51,7 @@
             cursor: pointer;
         }
         &:focus {
-            background-color: #EB507F;
+            background-color: #ffa500;
             color: white;
             border: none;
             padding:0;
@@ -62,11 +71,12 @@
     width: 7rem;
     border: none;
     margin-left: 2rem;
+    margin-top: 1rem;
         &:hover{
             cursor: pointer;
         }
         &:focus {
-            background-color: #EB507F;
+            background-color: #ffa500;
             color: white;
             border: none;
             padding:0;

@@ -1,30 +1,74 @@
 import React, {useState} from "react"
 import{useDispatch, useSelector} from "react-redux"
 import "../assets/styles/Header.scss"
-import { movieAction } from "../store/actions/homepageAction"
 import {Link} from "react-router-dom"
+import Signin from "./modal/auths/Signin"
+import Signup from "./modal/auths/Signup";
+import Profile from "./modal/profile";
+import Upload from "./modal/profile/upload";
+import { ACTION_SIGN_OUT } from "../store/actions/auth";
 
 const Header = () => {
-    const [input, setInput] = useState("")
+     const stateUser = useSelector(state => state.auth);
+  const dispatch = useDispatch();
 
-    const dispatch = useDispatch()
+  const [modal, setModal] = useState("");
 
-    const isAuthenticate = useSelector(state =>state.auth.isAuthenticate)
+  const signin = "signin";
+  const signup = "signup";
+  const profile = "profile";
+  const upload = "upload";
 
-    const name = useSelector(state=> state.homepage.name)
+  const doSignout = () => {
+    console.log("signout triggered");
+    dispatch(ACTION_SIGN_OUT());
+  };
+
+  const toggleModal = e => {
+    setModal({
+      [e.target.id]: !modal[e.target.id]
+    });
+  };
+
     return(
         <React.Fragment>
             <div className="header">
-                <Link to="/"><h1><span className="header-title">MOVIE</span> HUB</h1></Link>
-                <input type="text" placeholder="search movie" onChange={(search)=> {
-                    // setInput(search.target.value)
-                    dispatch(movieAction(search.target.value))
-                    }}></input>
-                <h1>{input}</h1>
-                <h1>{name}</h1>
-                <h2>Sign In</h2>
-                <Link to="/overview"><h2>Overview</h2></Link>
-            </div>
+                <Link to="/"><h1>MOVIE <span className="header-title">HUB</span></h1></Link>
+                <input placeholder="search movie..."></input>
+                 {stateUser ? (
+                    <div className="profile-wrapper">
+                        <img className="profile" src={stateUser.image} alt="profile" />
+                        <div className="dropdown">
+                        <strong className="username">{stateUser.fullname}</strong>
+                        <a id={upload} href="/#" onClick={toggleModal}>
+                            Change Avatar
+                        </a>
+                        <a id={profile} href="/#" onClick={toggleModal}>
+                            Update Profile
+                        </a>
+                        <a href="/#" onClick={doSignout}>
+                            Sign out
+                        </a>
+                        </div>
+                    </div>
+                    ) : ( <div className="sign-in">
+                    <a id={signin} href="/#" className="ml-1 bold" onClick={toggleModal}>
+                        Sign in
+                    </a>
+                    </div>)}
+                </div>
+                {modal[signin] ? (
+                    <Signin toggleModal={toggleModal} signup={signup} />
+                ) : (
+                    false
+                )}
+                {modal[signup] ? (
+                    <Signup toggleModal={toggleModal} signin={signin} />
+                ) : (
+                    false
+                )}
+                {modal[profile] ? <Profile toggleModal={toggleModal} /> : false}
+                {modal[upload] ? <Upload toggleModal={toggleModal} /> : false}
         </React.Fragment>
     )
 }

@@ -1,8 +1,12 @@
-import {combineReducers} from "redux"
-import auth from "./auth"
-import homepageReducer from "./homepageReducer"
+import { combineReducers } from "redux";
+import authReducer from "./auth";
+// import loadingReducer from "./loading";
+import movieReducer from "./movie";
 
-export default combineReducers({
-    auth:auth,
-    homepage:homepageReducer
-})
+const rootReducers = combineReducers({
+  auth: authReducer,
+//   loading: loadingReducer,
+  movie: movieReducer
+});
+
+export default rootReducers;

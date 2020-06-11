@@ -1,11 +1,18 @@
 .footer {
+    padding-top: 1rem;
     background-color: #292929;
     color: white;
 }
 
+.footer-download h1 {
+    font-weight: bold;
+    color: white;
+}
+
 .footer-title {
-    background-color: #ffa31a;
+    background-color: #ffa500;
     color: black;
+    font-weight: bolder;
 }
 
 .footer-content {
@@ -18,9 +25,19 @@
     width: 30rem;
 }
 
+.footer-logo h1 {
+    font-weight: bold;
+    color: white;
+}
+
 .footer-navigation {
     margin-left: 6rem;
     text-align: left;
+}
+
+.footer-navigation h2 {
+    color: white;
+    font-weight: bold;
 }
 
 .footer-download {
@@ -63,5 +80,5 @@
 .footer-copyright {
     background-color: #292929;
     color: white;
-
+    text-align: center;
 }

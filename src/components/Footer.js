@@ -7,7 +7,7 @@ const Footer = () => {
             <div className="footer">
                 <div className="footer-content">
                     <div className="footer-logo">
-                        <h1><span className="footer-title">MOVIE</span> HUB</h1>
+                        <h1>MOVIE <span className="footer-title">HUB</span></h1>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.printing and typesetting industry. Lorem Ipsum has been the industry's standard</p>
                     </div>
                     <div className="footer-navigation">

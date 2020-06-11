@@ -2,7 +2,6 @@ import React from 'react';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
 import {Provider} from "react-redux"
 import store from "./store"
-import './App.css';
 import Homepage from "./views/Homepage"
 import DetailPageOverview from "./views/DetailPageOverview"
 import LoginForm from "./components/LoginForm"

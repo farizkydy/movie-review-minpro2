@@ -3,24 +3,37 @@ import Header from "../components/Header"
 import Footer from "../components/Footer"
 import{useSelector} from "react-redux"
 import "../assets/styles/Homepage.scss"
+import "antd/dist/antd.css";
 import { useHistory } from "react-router-dom"
+import { Carousel, Pagination } from 'antd';
 
 const Homepage = () => {
     const history = useHistory()
-    const isAuthenticated = useSelector(state => state.auth.isAuthenticated)
+    // useEffect(() => {
+    //     if(isAuthenticated === false) {
+    //     history.push("/login")
+    //     }
     
-    useEffect(() => {
-        if(isAuthenticated === false) {
-        history.push("/login")
-        }
-    
-    }, [])
+    // }, [])
 
     return(
         <React.Fragment>
             <Header/>
-            <div>
-                <img src={require("../assets/images/dio.jpg")} alt="Homepage"></img>
+            <div className="homepage-carousel">
+                    <Carousel autoplay>
+                        <div>
+                            <img src={require("../assets/images/slider1.jpg")} alt="part1"></img>
+                        </div>
+                        <div>
+                            <img src={require("../assets/images/slider2.jpg")} alt="part2"></img>
+                        </div>
+                        <div>
+                            <img src={require("../assets/images/slider3.jpg")} alt="part3"></img>
+                        </div>
+                        <div>
+                            <img src={require("../assets/images/slider4.jpg")} alt="part4"></img>
+                        </div>
+                    </Carousel>
             </div>
             <div className="homepage-category">
                 <h3>Browse by category</h3>
@@ -54,8 +67,8 @@ const Homepage = () => {
                 <img src={require("../assets/images/extra6.jpg")} alt="extra6"></img>
                 <img src={require("../assets/images/extra7.jpg")} alt="extra7"></img>
             </div>
-            <div>
-                <h1>PAGINATION</h1>
+            <div className="homepage-pagination">
+                <Pagination defaultCurrent={1} total={50}/>
             </div>
             <Footer/>
         </React.Fragment>
