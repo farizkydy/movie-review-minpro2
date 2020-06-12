@@ -1,26 +1,45 @@
+// import React from 'react';
+// import logo from './logo.svg';
+// import { Provider } from "react-redux";
+// import store from "./store";
+// import './App.css';
+// import LoginForm from './components/Loginform';
+// import ReviewComponents from './layouts/ReviewComponents';
+
+
+// function App() {
+//   return (
+//     <Provider store={store}>
+//       <div className="App">
+//         <LoginForm />
+//         {/* <ReviewComponents /> */}
+//       </div>
+//     </Provider>
+//   );
+// }
+
+// export default App;
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Provider } from 'react-redux';
+import { BrowserRouter as Router } from 'react-router-dom'
+import "./App.css";
+import Routes from './routes/Route';
+import store from './store';
+import { BrowserRouter } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <Router>
+        <div className="App">
+          <Routes />
+        </div>
+      </Router>
+    </Provider>
   );
 }
 
 export default App;
+
+
+

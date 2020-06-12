@@ -1,0 +1,31 @@
+.header {
+  display: flex;
+  padding-bottom: 2rem;
+  justify-content: space-around;
+  padding-top: 2rem;
+  background-color: #292929;
+  color: white;
+  padding-left: 6rem;
+}
+
+.header-title {
+  background-color: #ffa31a;
+  color: black;
+}
+
+.header img {
+  width: 5rem;
+  height: 5rem;
+  margin-left: -6rem;
+}
+
+.header h1 {
+  margin-left: -12rem;
+}
+
+.header input {
+  width: 30rem;
+  height: 2rem;
+  margin-top: 1.4rem;
+  margin-left: -12rem;
+}
