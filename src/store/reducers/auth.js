@@ -1,8 +1,9 @@
-import { LOGIN_SUCCESS, LOGIN_FAILED } from "../actions/types";
+import { LOGIN_SUCCESS } from "../actions/types"
+
 const initialState = {
     token: localStorage.getItem("token"),
-    error: null,
-    isAuthenticate: false
+    isAuthenticated: false,
+    errors: null
 }
 
 const auth = (state = initialState, action) => {
@@ -11,18 +12,13 @@ const auth = (state = initialState, action) => {
             return {
                 ...state
             }
-        case LOGIN_SUCCESS:
+        case LOGIN_SUCCESS: {
             return {
                 ...state,
-                isAuthenticate: true
+                isAuthenticated: true,
             }
-        case LOGIN_FAILED:
-            return {
-                ...state,
-                isAuthenticate: false,
-                token: localStorage.removeItem("token")
-            }
+        }
     }
 }
 
-export default auth;
+export default auth

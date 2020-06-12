@@ -1,20 +1,16 @@
 import { LOGIN_SUCCESS } from "./types";
-import { LOGIN_FAILED } from "./types";
-import axios from "axios";
-const baseUrl = "https://ga-todoapps.herokuapp.com/api/v1";
+import axios from "axios"
 
 export const login = data => async dispatch => {
     try {
-        const res = await axios.post(`${baseUrl}/user/login`, data)
+        const res = await axios.post("https://ga-todoapps.herokuapp.com/api/v1/user/login", data)
+        console.log("login", res)
         localStorage.setItem("token", res.data.token)
         dispatch({
             type: LOGIN_SUCCESS
         })
     } catch (error) {
-        console.log(error.status)
-        dispatch({
-            type: LOGIN_FAILED
-        })
+        console.log(error)
 
     }
 
