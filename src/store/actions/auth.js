@@ -1,4 +1,4 @@
-import {LOGIN_SUCCESS} from "./types";
+import { LOGIN_SUCCESS } from "./types";
 import axios from "axios"
 
 export const login = data => async dispatch => {
@@ -9,7 +9,7 @@ export const login = data => async dispatch => {
         dispatch({
             type: LOGIN_SUCCESS
         })
-    } catch(error) {
+    } catch (error) {
         console.log(error)
 
     }

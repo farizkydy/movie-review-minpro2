@@ -1,4 +1,4 @@
-import {LOGIN_SUCCESS} from "../actions/types"
+import { LOGIN_SUCCESS } from "../actions/types"
 
 const initialState = {
     token: localStorage.getItem("token"),
@@ -7,15 +7,15 @@ const initialState = {
 }
 
 const auth = (state = initialState, action) => {
-    switch(action.type) {
-    default:
-        return {
-            ...state
-        }
+    switch (action.type) {
+        default:
+            return {
+                ...state
+            }
         case LOGIN_SUCCESS: {
-            return{
+            return {
                 ...state,
-                isAuthenticated:true,
+                isAuthenticated: true,
             }
         }
     }
