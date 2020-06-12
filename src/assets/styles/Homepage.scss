@@ -3,12 +3,38 @@
     border-style: solid;
     border-width: 1px;
     width: 81.5rem;
-    height: 20rem;
+    height: 40rem;
+}
+
+.carousel-text h1 {
+    color: white;
+    text-shadow:
+   -1px -1px 0 #000,  
+    1px -1px 0 #000,
+   -1px 1px 0 #000,
+    1px 1px 0 #000;
+    font-size: 2rem;
+}
+
+.carousel-text {
+    position: absolute;
+    top: 30rem;
+    margin: 1rem;
+}
+
+.carousel-text p {
+    color: white;
+    text-shadow:
+   -1px -1px 0 #000,  
+    1px -1px 0 #000,
+   -1px 1px 0 #000,
+    1px 1px 0 #000;
+    font-size: 1.5rem;
 }
 
 .homepage-carousel img{
     width: 81.5rem;
-    height: 20rem;
+    height: 40rem;
 }
 
 .homepage-category {

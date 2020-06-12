@@ -10,7 +10,7 @@ import { ACTION_SIGN_OUT } from "../store/actions/auth";
 
 const Header = () => {
      const stateUser = useSelector(state => state.auth);
-  const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
   const [modal, setModal] = useState("");
 
