@@ -13,7 +13,7 @@ const Homepage = ({movieList, movies}) => {
         movieList();
     }, [movieList])
     const movieLists = movies.map(item=>(
-        <div>
+        <div className="movie-list">
             <img src={item.poster} alt="movie-poster"></img>
             <p>{item.title}</p>
         </div>

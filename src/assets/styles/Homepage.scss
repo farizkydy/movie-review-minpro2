@@ -73,8 +73,7 @@
 }
 
 .homepage-content-1 {
-    display: flex;
-    margin-left: 18rem;
+    display: flex
 }
 
 .homepage-content-1 img {
@@ -111,4 +110,11 @@
 .homepage-pagination {
     margin-left: 32rem;
     margin-bottom: 1rem;
+}
+
+.movie-list {
+    text-align: center;
+    color: black;
+    font-weight: bolder;
+    font-size: 1rem;
 }
