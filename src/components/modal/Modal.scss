@@ -19,7 +19,7 @@
     position: relative;
 
     a {
-      color: white;
+      color: black;
       text-decoration: underline;
     }
 
@@ -39,6 +39,7 @@
       top: 0.5rem;
       right: 0.5rem;
       color: black;
+      background-color: transparent;
     }
 
     form {

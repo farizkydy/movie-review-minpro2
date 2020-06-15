@@ -28,7 +28,7 @@ const authReducer = (
 
     case UPDATE_PROFILE:
       localStorage.setItem("userLocal", [
-        JSON.stringify({ ...state, fullname: action.payload.fullname })
+        JSON.stringify({ ...state, name: action.payload.name })
       ]);
       console.log(state, action.payload);
       alert("Data successfully updated");
@@ -49,7 +49,7 @@ const authReducer = (
 
     case ERROR_UPDATE:
       localStorage.clear();
-      alert("Your Token is Expired, please do Sig-in again");
+      alert("Your Token is Expired, please do Sign-in again");
       return false;
 
     default:

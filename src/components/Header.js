@@ -39,7 +39,7 @@ const Header = () => {
                     <div className="profile-wrapper">
                         <div className="profile-container">
                         <h1>{stateUser.name}</h1>
-                        <img className="profile" src={stateUser.profile.image_url} alt="profile" />
+                        {/* <img className="profile" src={stateUser.profile.image_url} alt="profile" /> */}
                         </div>
                         <div className="dropdown">
                         <strong className="username">{stateUser.email}</strong>
