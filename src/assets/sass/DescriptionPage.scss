@@ -118,4 +118,11 @@
       opacity: 0.5;
     }
   }
+  .active {
+    background-color: $color1;
+    color: black;
+    border-radius: 4rem;
+    min-width: 5rem;
+    text-align: center;
+  }
 }

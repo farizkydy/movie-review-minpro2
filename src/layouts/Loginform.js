@@ -19,7 +19,7 @@ const LoginForm = (props) => {
             password
         }
         dispatchEvent(login(userData))
-        props.history.push("/review")
+        props.history.push("/description")
     }
     return (
         <Router>

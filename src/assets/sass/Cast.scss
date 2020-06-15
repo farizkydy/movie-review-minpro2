@@ -1,18 +1,13 @@
 .casts {
   display: block;
-  width: 70%;
+  width: 100%;
   height: auto;
   &__container {
     display: flex;
     height: auto;
     margin: 3rem 3rem;
     justify-content: space-between;
-    padding: 20px 10px;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    padding-inline-start: 20px;
+    
   
   &__img {
     display: flex;
@@ -20,19 +15,15 @@
     margin: 3rem 3rem;
     justify-content: space-between;
     padding: 20px 10px;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    padding-inline-start: 20px;
+   
   }
 }
 .card {
   padding-right: 20px;
   margin-right: 20px;
   justify-content: center;
-  width: 70%;
+  width: 100%;
   color: black;
-  height: 10rem;
+  height: 100%;
 }
 }

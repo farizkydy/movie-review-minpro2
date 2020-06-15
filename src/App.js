@@ -26,14 +26,21 @@ import "./App.css";
 import Routes from './routes/Route';
 import store from './store';
 import { BrowserRouter } from 'react-router-dom';
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fas } from "@fortawesome/free-solid-svg-icons";
+import { fab } from "@fortawesome/free-brands-svg-icons";
+import { far } from "@fortawesome/free-regular-svg-icons";
+import { Layout } from 'antd';
 
 function App() {
   return (
     <Provider store={store}>
       <Router>
         <div className="App">
+          <Layout />
           <Routes />
         </div>
+        <Layout />
       </Router>
     </Provider>
   );
