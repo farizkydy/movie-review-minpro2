@@ -30,7 +30,7 @@ function Signin(props) {
     <div className="Auths flex center">
       <div className="modal flex center column">
         <h1 className="m-0">Sign in</h1>
-        <button className="close" onClick={props.toggleModal}>
+        <button className="close" onClick={props.toggleModal}>X
         </button>
 
         <form onSubmit={handleSubmit}>

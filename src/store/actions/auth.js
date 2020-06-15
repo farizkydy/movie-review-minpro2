@@ -9,13 +9,19 @@ import {
   CHANGE_AVATAR
 } from "./types";
 import Axios from "axios";
-const baseUrl = "https://movie-review-team-c.herokuapp.com/api/v1";
+const baseUrl = "https://movie-hubapp.herokuapp.com/api/v1";
 
 export const ACTION_SIGN_UP = input => {
   return dispatch => {
-    console.log("ACTION_SIGN_UP");
+    console.log("ACTION_SIGN_UP", input.email);
     dispatch({ type: LOADING });
-    Axios.post(`${baseUrl}/register`, input)
+    Axios.post(`${baseUrl}/register`,{
+      email: input.email,
+      name:input.name,
+      password: input.password
+    },{
+       headers: {'Content-Type': 'application/json'}
+    })
       .then(res => {
         console.log(res);
         dispatch({

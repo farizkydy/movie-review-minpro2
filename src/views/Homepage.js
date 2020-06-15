@@ -59,7 +59,7 @@ const Homepage = ({movieList, movies}) => {
             <div className="homepage-category-button">
                 <button className="button-all">All</button>
                 <button className="button-anime">Anime</button>
-                <button className="button-action">Action</button>
+                <button className="button-action" onClick={()=>null}>Action</button>
                 <button className="button-adventure">Adventure</button>
                 <button className="buttoon-scifi">Science Fiction</button>
                 <button className="button-comedy">Comedy</button>
@@ -95,7 +95,7 @@ const Homepage = ({movieList, movies}) => {
                 <img src={require("../assets/images/extra7.jpg")} alt="extra7"></img> */}
             </div>
             <div className="homepage-pagination">
-                <Pagination defaultCurrent={1} total={50}/>
+                <Pagination defaultCurrent={1} total={60}/>
             </div>
             <Footer/>
         </React.Fragment>

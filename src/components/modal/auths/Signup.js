@@ -8,10 +8,9 @@ import { ACTION_SIGN_UP } from "../../../store/actions/auth";
 export default function Signup(props) {
   const dispatch = useDispatch();
   const [input, setInput] = useState({
-    fullname: "",
+    name: "",
     email: "",
     password: "",
-    password_confirmation: ""
   });
 
   const handleInput = e => {
@@ -38,8 +37,8 @@ export default function Signup(props) {
         <form onSubmit={handleSubmit}>
           <div className="input-wrapper flex y-center">
             <input
-              id="fullname"
-              value={input.fullname}
+              id="name"
+              value={input.name}
               onChange={handleInput}
               type="text"
               placeholder="Input Your Username..."
@@ -69,18 +68,6 @@ export default function Signup(props) {
               required
             />
           </div>
-          <div className="input-wrapper flex y-center">
-            <input
-              id="password_confirmation"
-              value={input.password_confirmation}
-              onChange={handleInput}
-              type="password"
-              placeholder="Confirm Your Password..."
-              className="input"
-              required
-            />
-          </div>
-
           <button className="button" type="submit">
             <strong>Sign up</strong> &ensp;
           </button>

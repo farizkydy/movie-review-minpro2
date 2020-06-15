@@ -14,9 +14,8 @@ const authReducer = (
 ) => {
   switch (action.type) {
     case SIGN_UP:
-      localStorage.setItem("userLocal", JSON.stringify(action.payload[1]));
-      alert(action.payload[0].message);
-      return action.payload[1];
+      localStorage.setItem("userLocal", JSON.stringify(action.payload));
+      return action.payload;
 
     case SIGN_IN:
       localStorage.setItem("userLocal", JSON.stringify(action.payload));
@@ -50,7 +49,7 @@ const authReducer = (
 
     case ERROR_UPDATE:
       localStorage.clear();
-      alert("Your Token is Expired, please do Sigin again");
+      alert("Your Token is Expired, please do Sig-in again");
       return false;
 
     default:
