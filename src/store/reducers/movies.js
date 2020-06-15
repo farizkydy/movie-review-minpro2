@@ -1,26 +1,18 @@
-const initialState = {
-    movies: [
-        {
-            id:1,
-            image: require("../../assets/images/part1.jpg"),
-            title: "Jojo's Bizzare Adventure Phantom Blood"
-        },
-        {
-            id:2,
-            image: require("../../assets/images/part2.jpg"),
-            title: "Jojo's Bizzare Adventure: Battle Tendency"
-        }
+import { GET_MOVIE, GET_GENRE } from "../actions/types";
 
-    ]
+const intialState = {
+  movies: []
 }
 
-const movies = (state = initialState, action) => {
-    switch(action.type) {
+const movieReducer = (state = intialState, action) => {
+  switch (action.type) {
+    case GET_MOVIE:
+      return { ...state,movies:action.payload };
+    case GET_GENRE:
+      return { ...state, genres: action.payload };
     default:
-        return {
-            ...state
-        }
-    }
-}
+      return state;
+  }
+};
 
-export default movies
+export default movieReducer;

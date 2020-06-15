@@ -9,7 +9,7 @@ import Upload from "./modal/profile/upload";
 import { ACTION_SIGN_OUT } from "../store/actions/auth";
 
 const Header = () => {
-     const stateUser = useSelector(state => state.auth);
+    const stateUser = useSelector(state => state.auth);
     const dispatch = useDispatch();
 
   const [modal, setModal] = useState("");
@@ -37,9 +37,10 @@ const Header = () => {
                 <input placeholder="search movie..."></input>
                  {stateUser ? (
                     <div className="profile-wrapper">
-                        <img className="profile" src={stateUser.image} alt="profile" />
+                        <h1>{stateUser.name}</h1>
+                        {/* <img className="profile" src={stateUser.image_url} alt="profile" /> */}
                         <div className="dropdown">
-                        <strong className="username">{stateUser.fullname}</strong>
+                        <strong className="username">{stateUser.email}</strong>
                         <a id={upload} href="/#" onClick={toggleModal}>
                             Change Avatar
                         </a>

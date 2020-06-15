@@ -83,8 +83,10 @@ a {
     display: none;
     background-color: black;
     width: 10rem;
+    height: 13rem;
     border-radius: 4px;
     position: absolute;
+    top: 2rem;
     right: 0;
     box-shadow: 0 0 5px black;
     padding: 1rem;
@@ -105,7 +107,7 @@ a {
         padding-left: 1rem;
         background-color: black;
         border-radius: 4px;
-        color: black;
+        color: white;
         opacity: 1;
       }
     }

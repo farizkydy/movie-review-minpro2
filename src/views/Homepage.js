@@ -1,21 +1,23 @@
 import React, {useEffect} from "react"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
-import{useSelector} from "react-redux"
+import{connect} from "react-redux"
 import "../assets/styles/Homepage.scss"
 import "antd/dist/antd.css";
-import { useHistory } from "react-router-dom"
+// import { useHistory } from "react-router-dom"
 import { Carousel, Pagination } from 'antd';
+import {movieList} from "../store/actions/movies"
 
-const Homepage = () => {
-    const history = useHistory()
-    // useEffect(() => {
-    //     if(isAuthenticated === false) {
-    //     history.push("/login")
-    //     }
-    
-    // }, [])
-const movies = useSelector(state=> state.movies.movies)
+const Homepage = ({movieList, movies}) => {
+    useEffect(() => {
+        movieList();
+    }, [movieList])
+    const movieLists = movies.map(item=>(
+        <div>
+            <img src={item.poster} alt="movie-poster"></img>
+            <p>{item.title}</p>
+        </div>
+    ))
     return(
         <React.Fragment>
             <Header/>
@@ -63,8 +65,9 @@ const movies = useSelector(state=> state.movies.movies)
                 <button className="button-comedy">Comedy</button>
             </div>
             <div className="homepage-content-1">
-                <img src={require("../assets/images/part1.jpg")} alt="part1"></img>
-                <img src={require("../assets/images/part2.jpg")} alt="part2"></img>
+                {movieLists}
+                {/* <img src={require("../assets/images/part1.jpg")} alt="part1"></img>
+                <img src={require("../assets/images/part2.jpg")} alt="part2"></img> */}
                 {/* {movies.movies.map(item=> {
                     return(
                         <div className="homepage-store">
@@ -73,7 +76,7 @@ const movies = useSelector(state=> state.movies.movies)
                         </div>
                     )
                 })} */}
-                <img src={require("../assets/images/part3.jpg")} alt="part3"></img>
+                {/* <img src={require("../assets/images/part3.jpg")} alt="part3"></img>
                 <img src={require("../assets/images/part4.jpg")} alt="part4"></img>
                 <img src={require("../assets/images/part5.png")} alt="part5"></img>
             </div>
@@ -89,7 +92,7 @@ const movies = useSelector(state=> state.movies.movies)
                 <img src={require("../assets/images/extra4.jpg")} alt="extra4"></img>
                 <img src={require("../assets/images/extra5.jpg")} alt="extra5"></img>
                 <img src={require("../assets/images/extra6.jpg")} alt="extra6"></img>
-                <img src={require("../assets/images/extra7.jpg")} alt="extra7"></img>
+                <img src={require("../assets/images/extra7.jpg")} alt="extra7"></img> */}
             </div>
             <div className="homepage-pagination">
                 <Pagination defaultCurrent={1} total={50}/>
@@ -99,4 +102,10 @@ const movies = useSelector(state=> state.movies.movies)
     )
 }
 
-export default Homepage;
+const mapStateToProps = state => {
+    return{
+        movies:state.movies.movies
+    }
+}
+
+export default connect (mapStateToProps, {movieList}) (Homepage);
