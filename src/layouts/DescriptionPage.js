@@ -86,7 +86,7 @@
 
 
 
-import React, { useState } from "react";
+import React, { useState, useEffect} from "react";
 import { FaStar } from "react-icons/fa";
 // import { FontawesomeObject } from "@fortawesome/fontawesome-svg-core";
 import "../assets/sass/DescriptionPage.scss";
@@ -98,6 +98,7 @@ import ReviewComponent from "../components/ReviewComponents";
 import { movieList } from "../store/actions/movies";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
+import {movieListId} from "../store/actions/movies"
 
 function DescriptionPage() {
     const overview = "overview";
@@ -107,7 +108,9 @@ function DescriptionPage() {
     // const dispatch = useDispatch();
     // const {id} = useParams()
 
-
+    // useEffect(()=>{
+    //     movieListId()
+    // }, [])
 
     return (
         <div>

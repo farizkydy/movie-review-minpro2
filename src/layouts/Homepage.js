@@ -1,12 +1,12 @@
 import React, { useEffect } from "react"
 import HeaderComponent from "./HeaderComponent"
 import FooterComponent from "./FooterComponent"
-import { connect } from "react-redux"
+import { connect, useDispatch } from "react-redux"
 import "../assets/sass/Homepage.scss"
 import "antd/dist/antd.css";
 import { Link } from "react-router-dom"
 import { Carousel, Pagination } from 'antd';
-import { movieList } from "../store/actions/movies"
+import { movieList, movieListPagination, movieListAction } from "../store/actions/movies"
 
 const Homepage = ({ movieList, movies }) => {
     useEffect(() => {
@@ -20,9 +20,21 @@ const Homepage = ({ movieList, movies }) => {
         </div>
         </Link>
     ))
+    console.log("MOVIES",movies)
+    const dispatch = useDispatch();
+
+    const changePage = (key) => {
+      console.log('key',key)
+      dispatch(movieListPagination(key))
+    }
+
+    const moviesAction = () => {
+      dispatch(movieListAction())
+    }
     return (
         <React.Fragment>
             <HeaderComponent />
+            <div className="homepage">
             <div className="homepage-carousel">
                 <Carousel autoplay>
                     <div>
@@ -61,7 +73,7 @@ const Homepage = ({ movieList, movies }) => {
             <div className="homepage-category-button">
                 <button className="button-all">All</button>
                 <button className="button-anime">Anime</button>
-                <button className="button-action" onClick={() => null}>Action</button>
+                <button className="button-action" onClick={moviesAction}>Action</button>
                 <button className="button-adventure">Adventure</button>
                 <button className="buttoon-scifi">Science Fiction</button>
                 <button className="button-comedy">Comedy</button>
@@ -97,7 +109,8 @@ const Homepage = ({ movieList, movies }) => {
                 <img src={require("../assets/images/extra7.jpg")} alt="extra7"></img> */}
             </div>
             <div className="homepage-pagination">
-                <Pagination defaultCurrent={1} total={60} />
+                <Pagination defaultCurrent={1} total={60} onChange={changePage}/>
+            </div>
             </div>
             <FooterComponent />
         </React.Fragment>

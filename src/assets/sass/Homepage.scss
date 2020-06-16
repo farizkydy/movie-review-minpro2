@@ -1,3 +1,7 @@
+.homepage {
+    background-color: #1b1b1b;
+}
+
 .homepage-carousel {
     margin-bottom: 2rem;
     border-style: solid;
@@ -43,12 +47,17 @@
     margin-left: 2rem;
     color: #8C8989;
     font-weight: bolder;
+    h3 {
+        color: white;
+    }
 }
+
 
 .homepage-category-button {
     display: flex;
     margin-bottom: 2rem;
     margin-left: 2rem;
+    color: white;
 }
 
 .homepage-category-button button {
@@ -112,8 +121,8 @@
 }
 
 .homepage-pagination {
-    margin-left: 32rem;
-    margin-bottom: 1rem;
+    margin-left: 30rem;
+    padding-bottom: 10rem;
 }
 
 .movie-list {
@@ -127,4 +136,26 @@
 .movie-list p {
     margin-left: 1rem;
     margin-top: -2rem;
+    color: white;
+}
+
+.ant-pagination{
+    a{
+        color: white !important;
+    }
+    li {
+        background-color: transparent !important;
+    }
+    ul {
+        background-color: transparent !important;
+    }
+    div {
+        background-color: transparent !important;
+        color: white;
+    }
+}
+
+.ant-pagination-item-link {
+    color: white !important;
+    background-color: transparent !important;
 }

@@ -42,7 +42,7 @@ const Header = () => {
                         {/* <img className="profile" src={stateUser.profile.image_url} alt="profile" /> */}
                         </div>
                         <div className="dropdown">
-                        <strong className="username">{stateUser.email}</strong>
+                        <strong className="username">Hi, {stateUser.name}</strong>
                         <a id={upload} href="/#" onClick={toggleModal}>
                             Change Avatar
                         </a>

@@ -25,6 +25,52 @@ export const movieList = () => async dispatch => {
   }
 };
 
+export const movieListPagination = (key) => async dispatch => {
+  try {
+    const getMovieRes = await fetch(
+      `${baseUrl}/movies/?limit=10&page=${key}`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        }
+      }
+    );
+    const dataMovie = await getMovieRes.json();
+    console.log('movielist', dataMovie)
+    dispatch({
+      type: GET_MOVIE,
+      payload: dataMovie.data[0].rows
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const movieListAction = () => async dispatch => {
+  try {
+    const getMovieRes = await fetch(
+      `${baseUrl}/movies/?movie=Action`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        }
+      }
+    );
+    const dataMovie = await getMovieRes.json();
+    console.log('movielist', dataMovie)
+    dispatch({
+      type: GET_MOVIE,
+      payload: dataMovie.data[0].rows
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 export const movieListId = () => async dispatch => {
   try{
     const getMovieId = await fetch(
