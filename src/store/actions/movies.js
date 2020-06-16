@@ -53,7 +53,7 @@ export const movieList = () => async dispatch => {
             }
         );
         const dataMovie = await getMovieRes.json();
-        console.log('movielist', dataMovie)
+        console.log('movielist', dataMovie.data[0].rows)
         dispatch({
             type: GET_MOVIE,
             payload: dataMovie.data[0].rows
