@@ -2,12 +2,6 @@ import React, { Component } from "react";
 import { Input } from 'antd';
 import "../assets/sass/ReviewPage.scss";
 import { FaStar } from "react-icons/fa";
-import DescriptionPage from "../layouts/DescriptionPage";
-import HeaderComponent from "../layouts/HeaderComponent";
-import FooterComponent from "../layouts/FooterComponent";
-import ReviewComment from "./ReviewComment";
-import moment from 'moment';
-
 
 const { TextArea } = Input;
 
@@ -18,8 +12,8 @@ class ReviewComponent extends Component {
         return (
 
             <div>
-                <HeaderComponent />
-                <DescriptionPage />
+                {/* <HeaderComponent />
+                <DescriptionPage /> */}
                 <div className="review">
                     <div className="review__img">
                         <img
@@ -47,7 +41,7 @@ class ReviewComponent extends Component {
                         <ReviewComment />
                     </div> */}
                 </div>
-                <FooterComponent />
+                {/* <FooterComponent /> */}
             </div>
 
         );
