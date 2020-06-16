@@ -10,25 +10,25 @@ import "../assets/sass/DetailPageOverview.scss";
 
 let ratings = ""
 
-let rating1 = () => {
-    ratings = "1"
-    console.log("rating =", ratings)
-}
+// let rating1 = () => {
+//     ratings = "1"
+//     console.log("rating =", ratings)
+// }
 
-let rating2 = () => {
-    ratings = "2"
-    console.log("rating = ", ratings)
-}
+// let rating2 = () => {
+//     ratings = "2"
+//     console.log("rating = ", ratings)
+// }
 
-let rating3 = () => {
-    ratings = "3"
-    console.log("rating = ", ratings)
-}
+// let rating3 = () => {
+//     ratings = "3"
+//     console.log("rating = ", ratings)
+// }
 
-let rating4 = () => {
-    ratings = "4"
-    console.log("rating = ", ratings)
-}
+// let rating4 = () => {
+//     ratings = "4"
+//     console.log("rating = ", ratings)
+// }
 
 let rating5 = () => {
     ratings = "5"

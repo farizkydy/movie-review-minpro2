@@ -5,11 +5,12 @@ import LoginForm from "../layouts/Loginform";
 // import ReviewComponent from "../components/ReviewComponents";
 // import Cast from "../components/Cast";
 import DescriptionPage from "../layouts/DescriptionPage";
+import Homepage from "../layouts/Homepage"
 
 const Routes = () => {
     return (
         <Fragment>
-            <Route path="/" exact component={LoginForm} />
+            <Route path="/" exact component={Homepage} />
             <Route path="/description" exact component={DescriptionPage} />
             {/* <Route path="/review" exact component={ReviewComponent} />
             <Route path="/cast" exact component={Cast} /> */}

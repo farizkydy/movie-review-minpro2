@@ -95,7 +95,7 @@ import HeaderComponent from "./HeaderComponent";
 import FooterComponent from "./FooterComponent"
 import DetailPageOverview from "../components/DetailPageOverview";
 import ReviewComponent from "../components/ReviewComponents";
-import { getMovies } from "../store/actions/movie";
+import { movieList } from "../store/actions/movies";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 
