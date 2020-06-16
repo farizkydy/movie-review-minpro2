@@ -4,10 +4,11 @@ import authReducer from "./auth";
 import movies from "./movies";
 
 const rootReducers = combineReducers({
-    auth: authReducer,
-    //   loading: loadingReducer,
-    movies
-    // movies //this is dummy data
+  auth: authReducer,
+//   loading: loadingReducer,
+  movies
+  // movies //this is dummy data
 });
 
 export default rootReducers;
+

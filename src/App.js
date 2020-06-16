@@ -1,52 +1,26 @@
-// import React from 'react';
-// import logo from './logo.svg';
-// import { Provider } from "react-redux";
-// import store from "./store";
-// import './App.css';
-// import LoginForm from './components/Loginform';
-// import ReviewComponents from './layouts/ReviewComponents';
-
-
-// function App() {
-//   return (
-//     <Provider store={store}>
-//       <div className="App">
-//         <LoginForm />
-//         {/* <ReviewComponents /> */}
-//       </div>
-//     </Provider>
-//   );
-// }
-
-// export default App;
 import React from 'react';
-import { Provider } from 'react-redux';
-import { BrowserRouter as Router } from 'react-router-dom'
-import "./App.css";
-import Routes from './routes/Route';
-import store from './store';
-import { BrowserRouter } from 'react-router-dom';
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { fas } from "@fortawesome/free-solid-svg-icons";
-import { fab } from "@fortawesome/free-brands-svg-icons";
-import { far } from "@fortawesome/free-regular-svg-icons";
-import { Layout } from 'antd';
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
+import {Provider} from "react-redux"
+import store from "./store"
+import Homepage from "./views/Homepage"
+import DetailPageOverview from "./views/DetailPageOverview"
+import LoginForm from "./components/LoginForm"
 
 function App() {
   return (
     <Provider store={store}>
+    <div className="App">
       <Router>
-        <div className="App">
-          <Layout />
-          <Routes />
-        </div>
-        <Layout />
+        <Switch>
+          <Route path="/" component={Homepage} exact/>
+          <Route path="/overview" component={DetailPageOverview} exact/>
+          <Route path="/login" component={LoginForm} exact/>
+          <Route component={()=> "404 not found"}/>
+        </Switch>
       </Router>
+    </div>
     </Provider>
   );
 }
 
 export default App;
-
-
-
