@@ -1,6 +1,18 @@
 .footer {
-    background-color: black;
+    padding-top: 1rem;
+    background-color: #292929;
     color: white;
+}
+
+.footer-download h1 {
+    font-weight: bold;
+    color: white;
+}
+
+.footer-title {
+    background-color: #ffa500;
+    color: black;
+    font-weight: bolder;
 }
 
 .footer-content {
@@ -8,17 +20,28 @@
 }
 
 .footer-logo {
-    margin-left: 7rem;
+    margin-left: 3rem;
     text-align: left;
+    width: 30rem;
+}
+
+.footer-logo h1 {
+    font-weight: bold;
+    color: white;
 }
 
 .footer-navigation {
-    margin-left: 5rem;
+    margin-left: 6rem;
     text-align: left;
 }
 
+.footer-navigation h2 {
+    color: white;
+    font-weight: bold;
+}
+
 .footer-download {
-    margin-left: 3rem;
+    margin-left: 9rem;
     margin-right: 7rem;
     text-align: left;
 }
@@ -55,7 +78,7 @@
 }
 
 .footer-copyright {
-    background-color: black;
+    background-color: #292929;
     color: white;
-
+    text-align: center;
 }

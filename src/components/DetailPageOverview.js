@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import HeaderComponent from "../layouts/HeaderComponent";
 import FooterComponent from "../layouts/FooterComponent";
 import DescriptionPage from "../layouts/DescriptionPage";
+
 import { useSelector } from "react-redux"
 import { useHistory } from "react-router-dom"
 import { StarTwoTone } from "@ant-design/icons";
@@ -9,25 +10,25 @@ import "../assets/sass/DetailPageOverview.scss";
 
 let ratings = ""
 
-let rating1 = () => {
-    ratings = "1"
-    console.log("rating =", ratings)
-}
+// let rating1 = () => {
+//     ratings = "1"
+//     console.log("rating =", ratings)
+// }
 
-let rating2 = () => {
-    ratings = "2"
-    console.log("rating = ", ratings)
-}
+// let rating2 = () => {
+//     ratings = "2"
+//     console.log("rating = ", ratings)
+// }
 
-let rating3 = () => {
-    ratings = "3"
-    console.log("rating = ", ratings)
-}
+// let rating3 = () => {
+//     ratings = "3"
+//     console.log("rating = ", ratings)
+// }
 
-let rating4 = () => {
-    ratings = "4"
-    console.log("rating = ", ratings)
-}
+// let rating4 = () => {
+//     ratings = "4"
+//     console.log("rating = ", ratings)
+// }
 
 let rating5 = () => {
     ratings = "5"
@@ -45,8 +46,8 @@ const DetailPageOverview = () => {
     // }, [])
     return (
         <React.Fragment>
-            <HeaderComponent />
-            <DescriptionPage />
+            {/* <HeaderComponent />
+            <DescriptionPage /> */}
 
             <div className="overview-contents">
                 <h1>Synopsis</h1>
@@ -61,7 +62,7 @@ const DetailPageOverview = () => {
                 <p><span className="content-spans">Studio</span>: David Productions</p>
                 <p><span className="content-spans">Keyword</span>: Jojo, Jojo's Bizzare Adventure, Joestar</p>
             </div>
-            <FooterComponent />
+            {/* <FooterComponent /> */}
         </React.Fragment>
     )
 }

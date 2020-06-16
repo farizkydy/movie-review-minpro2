@@ -8,8 +8,8 @@ class Cast extends Component {
     render() {
         return (
             <div>
-                <HeaderComponent />
-                <DescriptionPage />
+                {/* <HeaderComponent />
+                <DescriptionPage /> */}
                 <div className="casts">
                     <div className="casts__container">
 
@@ -34,6 +34,7 @@ class Cast extends Component {
 
 
 
+
                         </div>
                         {/* <div>
                             <p>joey</p>
@@ -41,7 +42,7 @@ class Cast extends Component {
 
                     </div>
                 </div>
-                <FooterComponent />
+                {/* <FooterComponent /> */}
             </div>
         )
     }

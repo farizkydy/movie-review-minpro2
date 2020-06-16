@@ -60,11 +60,12 @@
   .banner-body {
     position: absolute;
     margin-left: 48px;
+    margin-right: 30px;
     
     padding: 2rem;
     background-color: rgba($color2, 0.5);
-      width: 87%;
-      height: 90%;
+      width: 92%;
+      height: 100%;
       top: 0;
       color: white;
   .top {
@@ -72,6 +73,8 @@
     h1 {
       font-weight: bold;
       font-size: 64px;
+      color: white;
+      font: arial;
     }
     p {
       display: flex;
@@ -117,5 +120,12 @@
     &:hover {
       opacity: 0.5;
     }
+  }
+  .active {
+    background-color: $color1;
+    color: black;
+    border-radius: 4rem;
+    min-width: 5rem;
+    text-align: center;
   }
 }

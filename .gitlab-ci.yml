@@ -1,0 +1,43 @@
+image: node:8.15.1
+
+stages:
+  - build
+  - staging
+  - production
+
+deploy-to-development:
+  type: build
+  script:
+    - npm install
+    - npm run build
+  except:
+    - develop
+    - master
+
+deploy-to-staging:
+  type: deploy
+  stage: staging
+  environment:
+    name: staging
+    url: https://staging-movie-apps.herokuapp.com/
+  script:
+    - apt-get update -qy
+    - apt-get install -y ruby ruby-dev rubygems-integration
+    - gem install dpl
+    - dpl --provider=heroku --app=staging-movie-apps --api-key=$HEROKU_API_KEY
+  only:
+    - develop
+    
+deploy-production:
+  type: deploy
+  stage: production
+  environment:
+    name: production
+    url: https://team-c-movie-apps.herokuapp.com/
+  script:
+    - apt-get update -qy
+    - apt-get install -y ruby ruby-dev rubygems-integration
+    - gem install dpl
+    - dpl --provider=heroku --app=team-c-movie-apps --api-key=$HEROKU_API_KEY
+  only:
+    - master
