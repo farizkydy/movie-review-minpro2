@@ -88,7 +88,7 @@
 
 import React, { useState } from "react";
 import { FaStar } from "react-icons/fa";
-import { FontawesomeObject } from "@fortawesome/fontawesome-svg-core";
+// import { FontawesomeObject } from "@fortawesome/fontawesome-svg-core";
 import "../assets/sass/DescriptionPage.scss";
 import Cast from "../components/Cast";
 import HeaderComponent from "./HeaderComponent";

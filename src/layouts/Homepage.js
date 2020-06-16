@@ -4,7 +4,7 @@ import FooterComponent from "./FooterComponent"
 import { connect } from "react-redux"
 import "../assets/sass/Homepage.scss"
 import "antd/dist/antd.css";
-// import { useHistory } from "react-router-dom"
+import { Link } from "react-router-dom"
 import { Carousel, Pagination } from 'antd';
 import { movieList } from "../store/actions/movies"
 
@@ -13,10 +13,12 @@ const Homepage = ({ movieList, movies }) => {
         movieList();
     }, [movieList])
     const movieLists = movies.map(item => (
+        <Link to={`/description/${item.id}`}>
         <div className="movie-list">
             <img src={item.poster} alt="movie-poster"></img>
             <p>{item.title}</p>
         </div>
+        </Link>
     ))
     return (
         <React.Fragment>

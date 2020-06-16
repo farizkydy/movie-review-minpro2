@@ -73,11 +73,12 @@
 }
 
 .homepage-content-1 {
-    display: grid;
-    grid-template-columns: auto auto auto auto auto;
-    grid-gap: 0;
-    padding: 0;
-    margin-left: 4rem;
+    // display: grid;
+    // grid-template-columns: auto auto auto auto auto;
+    // grid-gap: 0;
+    // padding: 0;
+    // margin-left: 4rem;
+    display: flex;
 }
 
 .homepage-content-1 img {
@@ -118,10 +119,9 @@
 
 .movie-list {
     text-align: center;
-    color: black;
+    color: blue;
     font-weight: bolder;
     font-size: 0.8rem;
-    width: 10rem;
 }
 
 .movie-list p {

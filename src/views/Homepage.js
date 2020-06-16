@@ -4,7 +4,7 @@ import Footer from "../components/Footer"
 import{connect} from "react-redux"
 import "../assets/styles/Homepage.scss"
 import "antd/dist/antd.css";
-// import { useHistory } from "react-router-dom"
+import { Link } from "react-router-dom"
 import { Carousel, Pagination } from 'antd';
 import {movieList} from "../store/actions/movies"
 
@@ -12,12 +12,16 @@ const Homepage = ({movieList, movies}) => {
     useEffect(() => {
         movieList();
     }, [movieList])
-    const movieLists = movies.map(item=>(
-        <div className="movie-list">
-            <img src={item.poster} alt="movie-poster"></img>
-            <p>{item.title}</p>
-        </div>
-    ))
+    // const movieLists = movies.map(item=>(
+    //     <React.Fragment>
+    //         <div className="movie-list">
+    //             <img src={item.poster} alt="movie-poster"></img>
+    //             <p>{item.title}</p>
+    //             <Link to={`/description/${item.id}`}>LINK
+    //             </Link>
+    //         </div>
+    //     </React.Fragment>
+    // ))
     return(
         <React.Fragment>
             <Header/>
@@ -65,34 +69,18 @@ const Homepage = ({movieList, movies}) => {
                 <button className="button-comedy">Comedy</button>
             </div>
             <div className="homepage-content-1">
-                {movieLists}
-                {/* <img src={require("../assets/images/part1.jpg")} alt="part1"></img>
-                <img src={require("../assets/images/part2.jpg")} alt="part2"></img> */}
-                {/* {movies.movies.map(item=> {
-                    return(
-                        <div className="homepage-store">
-                            <img src={item.image}></img>
-                            <h1>{item.title}</h1>
-                        </div>
-                    )
-                })} */}
-                {/* <img src={require("../assets/images/part3.jpg")} alt="part3"></img>
-                <img src={require("../assets/images/part4.jpg")} alt="part4"></img>
-                <img src={require("../assets/images/part5.png")} alt="part5"></img>
-            </div>
-            <div className="homepage-content-2">
-                <img src={require("../assets/images/part6.jpg")} alt="part6"></img>
-                <img src={require("../assets/images/part7.jpg")} alt="part7"></img>
-                <img src={require("../assets/images/part8.jpg")} alt="part8"></img>
-                <img src={require("../assets/images/extra1.jpg")} alt="extra1"></img>
-                <img src={require("../assets/images/extra2.jpg")} alt="extra2"></img>
-            </div>
-            <div className="homepage-content-3">
-                <img src={require("../assets/images/extra3.jpg")} alt="extra3"></img>
-                <img src={require("../assets/images/extra4.jpg")} alt="extra4"></img>
-                <img src={require("../assets/images/extra5.jpg")} alt="extra5"></img>
-                <img src={require("../assets/images/extra6.jpg")} alt="extra6"></img>
-                <img src={require("../assets/images/extra7.jpg")} alt="extra7"></img> */}
+                {/* {movieLists} */}
+                {movies.map(item=>(
+                    <React.Fragment>
+                    <div className="movie-list">
+                        <Link to={`/description/${item.id}`}>
+                        <img src={item.poster} alt="movie-poster"></img>
+                        <p>{item.title}</p>
+                        <button>DETAIL</button>
+                        </Link>
+                    </div>
+                    </React.Fragment>
+    ))}
             </div>
             <div className="homepage-pagination">
                 <Pagination defaultCurrent={1} total={60}/>

@@ -25,4 +25,25 @@ export const movieList = () => async dispatch => {
   }
 };
 
-
+export const movieListId = () => async dispatch => {
+  try{
+    const getMovieId = await fetch(
+      `${baseUrl}/movies/:id`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        }
+      }
+    )
+    const dataMovieId = await getMovieId.json();
+    console.log('movielist', dataMovieId)
+    dispatch({
+      type: "GET_MOVIE_ID",
+      payload: dataMovieId.data[0].rows.id
+    });
+  } catch (error) {
+    console.log(error);
+  }
+  }

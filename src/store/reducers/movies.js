@@ -1,7 +1,8 @@
 import { GET_MOVIE, GET_GENRE } from "../actions/types";
 
 const intialState = {
-  movies: []
+  movies: [],
+  detail: []
 }
 
 const movieReducer = (state = intialState, action) => {
@@ -10,6 +11,8 @@ const movieReducer = (state = intialState, action) => {
       return { ...state,movies:action.payload };
     case GET_GENRE:
       return { ...state, genres: action.payload };
+      case "GET_DETAIL":
+        return{...state, detail:action.payload}
     default:
       return state;
   }

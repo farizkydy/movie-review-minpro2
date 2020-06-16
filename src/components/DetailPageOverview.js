@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 import HeaderComponent from "../layouts/HeaderComponent";
 import FooterComponent from "../layouts/FooterComponent";
 import DescriptionPage from "../layouts/DescriptionPage";
-
 import { useSelector } from "react-redux"
 import { useHistory } from "react-router-dom"
 import { StarTwoTone } from "@ant-design/icons";
 import "../assets/sass/DetailPageOverview.scss";
+
 
 let ratings = ""
 
@@ -44,6 +44,9 @@ const DetailPageOverview = () => {
     //     history.push("/login")
     //     }
     // }, [])
+
+    const getDetail = useSelector(state => state.movies.detail)
+    console.log(getDetail)
     return (
         <React.Fragment>
             {/* <HeaderComponent />
@@ -51,7 +54,7 @@ const DetailPageOverview = () => {
 
             <div className="overview-contents">
                 <h1>Synopsis</h1>
-                <p>Each of the series' eight protagonists is a member of the Joestar family (ジョースター家, Jōsutā ke), whose mainline descendants possess a star-shaped birthmark above their left shoulder blade and a name that can be abbreviated to the titular "JoJo". The plot of each part generally consists of this JoJo gathering a group of allies, mastering their supernatural ability, battling various enemies, and ultimately confronting the part's powerful main villain. The first six parts of the series take place within a single continuity whose multi-generational conflict stems from the rivalry between Jonathan Joestar and Dio Brando, while the latter two parts take place in an alternate universe following a continuity reboot, where the Joestar family tree is heavily altered.</p>
+                <p>{getDetail}</p>
                 <h1>Movie Info</h1>
                 <p><span className="content-spans">Release date</span>: October 5, 2012</p>
                 <p><span className="content-spans">Director</span>: Hirohiko Araki</p>
