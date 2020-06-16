@@ -1,25 +1,28 @@
 import React, { useEffect } from "react"
 import HeaderComponent from "./HeaderComponent"
 import FooterComponent from "./FooterComponent"
-import { connect } from "react-redux"
+import { connect, useSelector, useDispatch } from "react-redux"
 import "../assets/sass/Homepage.scss"
 import "antd/dist/antd.css";
 // import { useHistory } from "react-router-dom"
 import { Carousel, Pagination } from 'antd';
-import { movieList } from "../store/actions/movies"
+import { getMovies, getMoviesId } from "../store/actions/movies"
+import { Link } from "react-router-dom"
 
-const Homepage = ({ movieList, movies }) => {
+
+function Homepage() {
+    const dispatch = useDispatch();
+    const movieList = useSelector((state) => state.movies.movies);
+    const moviesId = useSelector((state) => state.movies.moviesId);
+
     useEffect(() => {
-        movieList();
-    }, [movieList])
-    const movieLists = movies.map(item => (
-        <div className="movie-list">
-            <img src={item.poster} alt="movie-poster"></img>
-            <p>{item.title}</p>
-        </div>
-    ))
+        dispatch(getMovies());
+    }, []);
+
+
     return (
-        <React.Fragment>
+        // <React.Fragment>
+        <div>
             <HeaderComponent />
             <div className="homepage-carousel">
                 <Carousel autoplay>
@@ -65,47 +68,40 @@ const Homepage = ({ movieList, movies }) => {
                 <button className="button-comedy">Comedy</button>
             </div>
             <div className="homepage-content-1">
-                {movieLists}
-                {/* <img src={require("../assets/images/part1.jpg")} alt="part1"></img>
-                <img src={require("../assets/images/part2.jpg")} alt="part2"></img> */}
-                {/* {movies.movies.map(item=> {
-                    return(
-                        <div className="homepage-store">
-                            <img src={item.image}></img>
-                            <h1>{item.title}</h1>
-                        </div>
-                    )
-                })} */}
-                {/* <img src={require("../assets/images/part3.jpg")} alt="part3"></img>
-                <img src={require("../assets/images/part4.jpg")} alt="part4"></img>
-                <img src={require("../assets/images/part5.png")} alt="part5"></img>
+                {movieList.map((movie) => (
+                    <div className="movie-list">
+                        <img alt="movie" src={movie.poster} style={{ height: "50%" }} />
+                        <h5>{movie.title}</h5>
+                        <Link to={`/description/${movie.id}`} >
+                            <button
+                                onClick={() => {
+                                    dispatch(getMoviesId(movie.id));
+                                    // history.push("/overview");
+                                }}
+                            >
+                                synopsis
+                        </button>
+                        </Link >
+                    </div>
+                ))}
+
             </div>
-            <div className="homepage-content-2">
-                <img src={require("../assets/images/part6.jpg")} alt="part6"></img>
-                <img src={require("../assets/images/part7.jpg")} alt="part7"></img>
-                <img src={require("../assets/images/part8.jpg")} alt="part8"></img>
-                <img src={require("../assets/images/extra1.jpg")} alt="extra1"></img>
-                <img src={require("../assets/images/extra2.jpg")} alt="extra2"></img>
-            </div>
-            <div className="homepage-content-3">
-                <img src={require("../assets/images/extra3.jpg")} alt="extra3"></img>
-                <img src={require("../assets/images/extra4.jpg")} alt="extra4"></img>
-                <img src={require("../assets/images/extra5.jpg")} alt="extra5"></img>
-                <img src={require("../assets/images/extra6.jpg")} alt="extra6"></img>
-                <img src={require("../assets/images/extra7.jpg")} alt="extra7"></img> */}
-            </div>
+
             <div className="homepage-pagination">
                 <Pagination defaultCurrent={1} total={60} />
             </div>
             <FooterComponent />
-        </React.Fragment>
-    )
+        </div>
+
+    );
 }
 
-const mapStateToProps = state => {
-    return {
-        movies: state.movies.movies
-    }
-}
+export default Homepage;
 
-export default connect(mapStateToProps, { movieList })(Homepage);
+
+
+
+
+
+
+

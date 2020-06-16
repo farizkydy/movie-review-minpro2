@@ -28,18 +28,20 @@
 // }
 
 // export default movieReducer;
-import { GET_MOVIE, GET_GENRE } from "../actions/types";
+import { GET_MOVIE, GET_GENRE, GET_MOVIES_ID } from "../actions/types";
 
 const intialState = {
-  movies: []
+  movies: [],
+  moviesID: [],
+  pagination: []
 }
 
 const movieReducer = (state = intialState, action) => {
   switch (action.type) {
     case GET_MOVIE:
       return { ...state, movies: action.payload };
-    // case GET_GENRE:
-    //   return { ...state, genres: action.payload };
+    case GET_MOVIES_ID:
+      return { ...state, moviesID: action.payload };
     default:
       return state;
   }

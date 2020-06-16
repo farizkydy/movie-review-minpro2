@@ -36,11 +36,12 @@
 //     }
 // }
 
-import { GET_MOVIE } from "./types"
+import { GET_MOVIE, GET_MOVIES_ID } from "./types";
+import Axios from "axios";
 const baseUrl = "https://movie-hubapp.herokuapp.com/api/v1";
 
 
-export const movieList = () => async dispatch => {
+export const getMovies = () => async dispatch => {
     try {
         const getMovieRes = await fetch(
             `${baseUrl}/movies`,
@@ -62,6 +63,29 @@ export const movieList = () => async dispatch => {
         console.log(error);
     }
 };
+
+export const getMoviesId = (id) => {
+    return dispatch => (
+        Axios({
+            method: "GET",
+            url: `${baseUrl}/movies/${id}`,
+            headers: {
+                "Content-type": "application/json"
+            }
+        })
+            .then((res) => {
+                console.log(res, "RESDATA")
+                dispatch({
+                    type: GET_MOVIES_ID,
+                    payload: res.data.data[0].movie
+                })
+            })
+            .catch((err) => {
+                console.log('ERROR', err)
+            })
+    )
+}
+
 
 
 
