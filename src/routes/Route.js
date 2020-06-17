@@ -11,7 +11,7 @@ const Routes = () => {
     return (
         <Fragment>
             <Route path="/" exact component={Homepage} />
-            {/* <Route path="/description" exact component={DescriptionPage} /> */}
+            <Route path="/description/:id" exact component={DescriptionPage} />
             {/* <Route path="/review" exact component={ReviewComponent} />
             <Route path="/cast" exact component={Cast} /> */}
             <Route path="/description/:id" exact component={DescriptionPage}/>
