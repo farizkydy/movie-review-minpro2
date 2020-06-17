@@ -24,7 +24,7 @@ deploy-to-staging:
     - apt-get update -qy
     - apt-get install -y ruby ruby-dev rubygems-integration
     - gem install dpl
-    - dpl --provider=heroku --app=staging-movie-apps --api-key=$HEROKU_API_KEY
+    - dpl --provider=heroku --app=staging-movie-apps --api-key=733e1ee8-66be-476f-b962-f0f912f999c1
   only:
     - develop
     
@@ -38,6 +38,6 @@ deploy-production:
     - apt-get update -qy
     - apt-get install -y ruby ruby-dev rubygems-integration
     - gem install dpl
-    - dpl --provider=heroku --app=team-c-movie-apps --api-key=$HEROKU_API_KEY
+    - dpl --provider=heroku --app=team-c-movie-apps --api-key=733e1ee8-66be-476f-b962-f0f912f999c1
   only:
     - master
