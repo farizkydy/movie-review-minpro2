@@ -35,7 +35,7 @@ const Routes = () => {
 >>>>>>> 8fc935b028de5337fe2da9cbc2972486593bd39b
 =======
             <Route path="/" exact component={Homepage} />
-            <Route path="/description" exact component={DescriptionPage} />
+            <Route path="/description/:id" exact component={DescriptionPage} />
             {/* <Route path="/review" exact component={ReviewComponent} />
             <Route path="/cast" exact component={Cast} /> */}
 >>>>>>> b392866ae3f0117a44b8271bfc2143669044b861
