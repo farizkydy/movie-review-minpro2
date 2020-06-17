@@ -48,4 +48,3 @@ const movieReducer = (state = intialState, action) => {
 };
 
 export default movieReducer;
-

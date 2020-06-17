@@ -1,0 +1,130 @@
+.homepage-carousel {
+    margin-bottom: 2rem;
+    border-style: solid;
+    border-width: 1px;
+    width: 81.5rem;
+    height: 40rem;
+}
+
+.carousel-text h1 {
+    color: white;
+    text-shadow:
+   -1px -1px 0 #000,  
+    1px -1px 0 #000,
+   -1px 1px 0 #000,
+    1px 1px 0 #000;
+    font-size: 2rem;
+}
+
+.carousel-text {
+    position: absolute;
+    top: 30rem;
+    margin: 1rem;
+}
+
+.carousel-text p {
+    color: white;
+    text-shadow:
+   -1px -1px 0 #000,  
+    1px -1px 0 #000,
+   -1px 1px 0 #000,
+    1px 1px 0 #000;
+    font-size: 1.5rem;
+}
+
+.homepage-carousel img{
+    width: 81.5rem;
+    height: 40rem;
+}
+
+.homepage-category {
+    text-align: left;
+    margin-top: 2rem;
+    margin-left: 2rem;
+    color: #8C8989;
+    font-weight: bolder;
+}
+
+.homepage-category-button {
+    display: flex;
+    margin-bottom: 2rem;
+    margin-left: 2rem;
+}
+
+.homepage-category-button button {
+    background-color: transparent;
+    color: gray;
+    font-weight: bolder;
+    font-size: 0.8rem;
+    border-radius: 50px;
+    width: 7rem;
+    border: none;
+    margin-left: 2rem;
+        &:hover{
+            cursor: pointer;
+        }
+        &:focus {
+            background-color: #ffa500;
+            color: white;
+            border: none;
+            padding:0;
+            outline:0;
+        }
+}
+
+.homepage-content-1 {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    grid-gap: 0;
+    padding: 0;
+    margin-left: 4rem;
+}
+
+.homepage-content-1 img {
+    width: 8rem;
+    height: 14rem;
+    margin-left: 1rem;
+    margin-bottom: 3rem;
+}
+
+.homepage-content-2 {
+    display: flex;
+    margin-left: 18rem;
+}
+
+.homepage-content-2 img {
+    width: 8rem;
+    height: 14rem;
+    margin-left: 1rem;
+    margin-bottom: 3rem;
+}
+
+.homepage-content-3 {
+    display: flex;
+    margin-left: 18rem;
+}
+
+.homepage-content-3 img {
+    width: 8rem;
+    height: 14rem;
+    margin-left: 1rem;
+    margin-bottom: 3rem;
+}
+
+.homepage-pagination {
+    margin-left: 32rem;
+    margin-bottom: 1rem;
+}
+
+.movie-list {
+    text-align: center;
+    color: black;
+    font-weight: bolder;
+    font-size: 0.8rem;
+    width: 10rem;
+}
+
+.movie-list p {
+    margin-left: 1rem;
+    margin-top: -2rem;
+}

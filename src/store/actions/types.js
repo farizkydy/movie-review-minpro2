@@ -6,8 +6,5 @@ export const CHANGE_AVATAR = "CHANGE_AVATAR";
 export const LOADING = "LOADING";
 export const ERROR_LOGIN = "ERROR_LOGIN";
 export const ERROR_UPDATE = "ERROR_UPDATE";
-
 export const GET_MOVIE = "GET_MOVIE";
-export const GET_MOVIES_ID = "GET_MOVIES_ID";
-export const GET_REVIEWS = "GET_REVIEWS";
-export const GET_COMMENT = "GET_COMMENT";
+export const GET_GENRE = "GET_GENRE";
