@@ -9,9 +9,8 @@ export default function Signin(props) {
   const stateUser = useSelector(state => state.auth);
   const dispatch = useDispatch();
   const [input, setInput] = useState({
-    fullname: stateUser.fullname,
+    name: stateUser.name,
     email: stateUser.email,
-    image: stateUser.image
   });
 
   const handleInput = e => {
@@ -38,11 +37,11 @@ export default function Signin(props) {
         <form onSubmit={handleSubmit}>
           <div className="input-wrapper flex y-center">
             <input
-              id="fullname"
-              value={input.fullname}
+              id="name"
+              value={input.name}
               onChange={handleInput}
               type="text"
-              placeholder="Input Your Username..."
+              placeholder="Input Your Name..."
               className="input"
               required
             />

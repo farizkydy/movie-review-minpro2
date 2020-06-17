@@ -9,7 +9,7 @@ import {
   CHANGE_AVATAR
 } from "./types";
 import Axios from "axios";
-const baseUrl = "https://movie-hubapp.herokuapp.com/api/v1";
+const baseUrl = "https://mini-project-movie.herokuapp.com/api/v1";
 
 export const ACTION_SIGN_UP = input => {
   return dispatch => {
@@ -18,7 +18,8 @@ export const ACTION_SIGN_UP = input => {
     Axios.post(`${baseUrl}/register`,{
       email: input.email,
       name:input.name,
-      password: input.password
+      password: input.password,
+      username: input.username
     },{
        headers: {'Content-Type': 'application/json'}
     })

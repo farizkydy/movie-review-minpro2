@@ -1,5 +1,5 @@
 import {GET_MOVIE} from "./types"
-const baseUrl = "https://movie-hubapp.herokuapp.com/api/v1";
+const baseUrl = "https://mini-project-movie.herokuapp.com/api/v1";
 
 
 export const movieList = () => async dispatch => {
@@ -29,29 +29,6 @@ export const movieListPagination = (key) => async dispatch => {
   try {
     const getMovieRes = await fetch(
       `${baseUrl}/movies/?limit=10&page=${key}`,
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json"
-        }
-      }
-    );
-    const dataMovie = await getMovieRes.json();
-    console.log('movielist', dataMovie)
-    dispatch({
-      type: GET_MOVIE,
-      payload: dataMovie.data[0].rows
-    });
-  } catch (error) {
-    console.log(error);
-  }
-};
-
-export const movieListAction = () => async dispatch => {
-  try {
-    const getMovieRes = await fetch(
-      `${baseUrl}/movies/?movie=Action`,
       {
         method: "GET",
         headers: {

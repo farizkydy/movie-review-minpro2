@@ -28,7 +28,7 @@ const authReducer = (
 
     case UPDATE_PROFILE:
       localStorage.setItem("userLocal", [
-        JSON.stringify({ ...state, name: action.payload.name })
+        JSON.stringify({ ...state, name: action.payload })
       ]);
       console.log(state, action.payload);
       alert("Data successfully updated");

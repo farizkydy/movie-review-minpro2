@@ -11,6 +11,7 @@ export default function Signup(props) {
     name: "",
     email: "",
     password: "",
+    username:""
   });
 
   const handleInput = e => {
@@ -39,6 +40,17 @@ export default function Signup(props) {
             <input
               id="name"
               value={input.name}
+              onChange={handleInput}
+              type="text"
+              placeholder="Input Your Name..."
+              className="input"
+              required
+            />
+          </div>
+          <div className="input-wrapper flex y-center">
+            <input
+              id="username"
+              value={input.username}
               onChange={handleInput}
               type="text"
               placeholder="Input Your Username..."

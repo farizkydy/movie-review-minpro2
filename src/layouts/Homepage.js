@@ -6,7 +6,7 @@ import "../assets/sass/Homepage.scss"
 import "antd/dist/antd.css";
 import { Link } from "react-router-dom"
 import { Carousel, Pagination } from 'antd';
-import { movieList, movieListPagination, movieListAction } from "../store/actions/movies"
+import { movieList, movieListPagination } from "../store/actions/movies"
 
 const Homepage = ({ movieList, movies }) => {
     useEffect(() => {
@@ -28,9 +28,6 @@ const Homepage = ({ movieList, movies }) => {
       dispatch(movieListPagination(key))
     }
 
-    const moviesAction = () => {
-      dispatch(movieListAction())
-    }
     return (
         <React.Fragment>
             <HeaderComponent />
@@ -73,7 +70,7 @@ const Homepage = ({ movieList, movies }) => {
             <div className="homepage-category-button">
                 <button className="button-all">All</button>
                 <button className="button-anime">Anime</button>
-                <button className="button-action" onClick={moviesAction}>Action</button>
+                <button className="button-action">Action</button>
                 <button className="button-adventure">Adventure</button>
                 <button className="buttoon-scifi">Science Fiction</button>
                 <button className="button-comedy">Comedy</button>
